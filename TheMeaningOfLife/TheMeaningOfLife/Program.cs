@@ -11,15 +11,13 @@ namespace TheMeaningOfLife
     class Program
     {
         static List<EventWaitHandle> threadFinishEvents = new List<EventWaitHandle>();
-        static Dictionary<String, int> amountPerFile = new Dictionary<String, int>();
+        static List<SearchedFile> files = new List<SearchedFile>();
 
         static void Main(string[] args)
         {
             startNewThread(args);
             
             Mutex.WaitAll(threadFinishEvents.ToArray());
-
-            print(amountPerFile);
 
             Console.Read();
         }
@@ -72,15 +70,12 @@ namespace TheMeaningOfLife
                     if (b == 42)
                         count++;
                 }
-                Console.WriteLine("\nAmount of bytes with value 42: " + count);
-            }
-        }
+                SearchedFile file = new SearchedFile(fullPath, count);
+                if(Ranking.canAdd(file))
+                {
+                    Ranking.add(file);
+                }
 
-        private static void print(Dictionary<string, int> amountPerFile)
-        {
-            foreach (String key in amountPerFile.Keys)
-            {
-                Console.WriteLine(key + ": " + amountPerFile[key]);
             }
         }
 

@@ -9,6 +9,21 @@ namespace TheMeaningOfLife
     class SearchedFile
     {
         public String FileName;
-        public int amountFound;
+        public int AmountFound;
+
+
+        public SearchedFile()
+        { }
+
+        public SearchedFile(String fileName, int amountFound)
+        {
+            FileName = fileName;
+            AmountFound = amountFound;
+        }
+
+        public override string ToString()
+        {
+            return FileName + ": " + AmountFound;
+        }
     }
 }
