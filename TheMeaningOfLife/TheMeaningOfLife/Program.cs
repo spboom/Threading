@@ -27,14 +27,13 @@ namespace TheMeaningOfLife
         static void exe(object argsObject)
         {
             string[] args = (string[])argsObject;
-            String filename = args[0];
-
-            FileAttributes attr = File.GetAttributes(filename);
+            String fullPath = Path.GetFullPath(args[0]);
+            FileAttributes attr = File.GetAttributes(fullPath);
 
             //detect whether its a directory or file
             if ((attr & FileAttributes.Directory) == FileAttributes.Directory)
             {
-                String[] files = Directory.GetFiles(filename, "*", SearchOption.AllDirectories);
+                String[] files = Directory.GetFiles(fullPath, "*", SearchOption.AllDirectories);
                 foreach (String file in files)
                 {
                     args[0] = file;
@@ -43,11 +42,11 @@ namespace TheMeaningOfLife
             }
             else
             {
-                if (!amountPerFile.ContainsKey(filename))
+                if (!amountPerFile.ContainsKey(fullPath))
                 {
-                    amountPerFile.Add(filename, 0);
+                    amountPerFile.Add(fullPath, 0);
                 }
-                string[] lines = System.IO.File.ReadAllLines(filename);
+                string[] lines = System.IO.File.ReadAllLines(fullPath);
 
                 foreach (String line in lines)
                 {
@@ -57,9 +56,9 @@ namespace TheMeaningOfLife
                         if (word.Contains("42"))
                         {
                             int amount = 0;
-                            amountPerFile.TryGetValue(filename, out amount);
+                            amountPerFile.TryGetValue(fullPath, out amount);
 
-                            amountPerFile[filename] = amount + 1;
+                            amountPerFile[fullPath] = amount + 1;
                         }
 
                     }
