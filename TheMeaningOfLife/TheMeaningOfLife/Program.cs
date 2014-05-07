@@ -68,7 +68,7 @@ namespace TheMeaningOfLife
                 byte[] bytes = File.ReadAllBytes(fullPath);
                 foreach (byte b in bytes)
                 {
-                    Console.Write(b + " ");
+                    //Console.Write(b + " ");
                     if (b == 42)
                         count++;
                 }
