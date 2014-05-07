@@ -13,9 +13,9 @@ namespace TheMeaningOfLife
         {
         }
 
-        public void add(Dictionary<String, int> object)
+        public void add(Dictionary<String, int> objects)
+        {
 
-
-        
+        }
     }
 }
