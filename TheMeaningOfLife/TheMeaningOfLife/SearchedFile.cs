@@ -10,5 +10,10 @@ namespace TheMeaningOfLife
     {
         public String FileName;
         public int amountFound;
+
+        public String toString()
+        {
+            return FileName + ": " + amountFound;
+        }
     }
 }
