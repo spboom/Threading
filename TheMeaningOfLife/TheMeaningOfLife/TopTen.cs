@@ -21,7 +21,7 @@ namespace TheMeaningOfLife
 
             while (node !=null)
             {
-                if(node.Value.amountFound<file.amountFound)
+                if(node.Value.AmountFound < file.AmountFound)
                 {
                     ranking.AddBefore(node, file);
 
@@ -41,7 +41,7 @@ namespace TheMeaningOfLife
             int i = 1;
             while (node!=null)
             {
-                responce += "#" + i + ": " + node.Value.FileName + " " + node.Value.amountFound + "\n";
+                responce += "#" + i + ": " + node.Value.FileName + " " + node.Value.AmountFound + "\n";
                 
                 node = node.Next;
             }
@@ -60,7 +60,7 @@ namespace TheMeaningOfLife
             {
                 return true;
             }
-            return ranking.Last.Value.amountFound < file.amountFound;
+            return ranking.Last.Value.AmountFound < file.AmountFound;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace TheMeaningOfLife
             
             Mutex.WaitAll(threadFinishEvents.ToArray());
 
-            print(files);
+            print();
 
             Console.Read();
         }
@@ -72,7 +72,7 @@ namespace TheMeaningOfLife
                     if (b == 42)
                         count++;
                 }
-                SearchedFile file = new SearchedFile() { amountFound = count, FileName = fullPath };
+                SearchedFile file = new SearchedFile(fullPath, count);
                 if(Ranking.canAdd(file))
                 {
                     Ranking.add(file);
@@ -83,7 +83,7 @@ namespace TheMeaningOfLife
             }
         }
 
-        private static void print(List<SearchedFile> files)
+        private static void print()
         {
             for (int i = 0; i < files.Count; i++)
             {
