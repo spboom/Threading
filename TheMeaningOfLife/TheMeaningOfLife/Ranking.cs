@@ -10,7 +10,7 @@ namespace TheMeaningOfLife
     {
         private static LinkedList<SearchedFile> ranking = new LinkedList<SearchedFile>();
 
-        internal static LinkedList<SearchedFile> RankingProp
+        private static LinkedList<SearchedFile> RankingProp
         {
             get { lock (RankingProp) { return Ranking.ranking; } }
             set { lock (RankingProp) { Ranking.ranking = value; } }
