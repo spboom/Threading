@@ -6,16 +6,61 @@ using System.Threading.Tasks;
 
 namespace TheMeaningOfLife
 {
-    class TopTen : List<Dictionary<String, int>>
+    class Ranking
     {
-        public TopTen()
+        private static LinkedList<SearchedFile> ranking = new LinkedList<SearchedFile>();
+        private static int MAXSIZE = 10;
+        public Ranking()
             :base()
         {
         }
 
-        public void add(Dictionary<String, int> objects)
+        public static void add(SearchedFile file)
         {
+            LinkedListNode<SearchedFile> node = ranking.First;
 
+            while (node !=null)
+            {
+                if(node.Value.amountFound<file.amountFound)
+                {
+                    ranking.AddBefore(node, file);
+
+                    if (ranking.Count > MAXSIZE)
+                    {
+                        ranking.RemoveLast();
+                    }
+                    break;
+                }
+            }
+        }
+
+        public static string showRanking()
+        {
+            String responce = "";
+            LinkedListNode<SearchedFile> node = ranking.First;
+            int i = 1;
+            while (node!=null)
+            {
+                responce += "#" + i + ": " + node.Value.FileName + " " + node.Value.amountFound + "\n";
+                
+                node = node.Next;
+            }
+
+            return responce;
+        }
+
+        public static void clearRanking()
+        {
+            ranking = new LinkedList<SearchedFile>();
+        }
+
+        public static bool canAdd(SearchedFile file)
+        {
+            if (ranking.Count < MAXSIZE)
+            {
+                return true;
+            }
+            return ranking.Last.Value.amountFound < file.amountFound;
         }
     }
 }
