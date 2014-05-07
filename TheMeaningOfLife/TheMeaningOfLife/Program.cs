@@ -19,8 +19,6 @@ namespace TheMeaningOfLife
             
             Mutex.WaitAll(threadFinishEvents.ToArray());
 
-            print();
-
             Console.Read();
         }
 
@@ -78,16 +76,6 @@ namespace TheMeaningOfLife
                     Ranking.add(file);
                 }
 
-                files.Add(file);
-
-            }
-        }
-
-        private static void print()
-        {
-            for (int i = 0; i < files.Count; i++)
-            {
-                Console.WriteLine(files[i]);
             }
         }
 

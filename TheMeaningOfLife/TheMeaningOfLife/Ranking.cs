@@ -9,6 +9,12 @@ namespace TheMeaningOfLife
     class Ranking
     {
         private static LinkedList<SearchedFile> ranking = new LinkedList<SearchedFile>();
+
+        internal static LinkedList<SearchedFile> RankingProp
+        {
+            get { lock (RankingProp) { return Ranking.ranking; } }
+            set { lock (RankingProp) { Ranking.ranking = value; } }
+        }
         private static int MAXSIZE = 10;
         public Ranking()
             :base()
@@ -18,35 +24,45 @@ namespace TheMeaningOfLife
         public static void add(SearchedFile file)
         {
             LinkedListNode<SearchedFile> node = ranking.First;
-
-            while (node !=null)
+            if (ranking.Count == 0)
             {
-                if(node.Value.AmountFound < file.AmountFound)
+                    ranking.AddFirst(file);
+            }
+            else
+            {
+                while (node != null)
                 {
-                    ranking.AddBefore(node, file);
+                        if (node.Value.AmountFound < file.AmountFound)
+                        {
+                            ranking.AddBefore(node, file);
 
-                    if (ranking.Count > MAXSIZE)
-                    {
-                        ranking.RemoveLast();
-                    }
-                    break;
+                            if (ranking.Count > MAXSIZE)
+                            {
+                                ranking.RemoveLast();
+                            }
+                            break;
+                        }
                 }
             }
+            showRanking();
         }
 
-        public static string showRanking()
+        public static void showRanking()
         {
-            String responce = "";
             LinkedListNode<SearchedFile> node = ranking.First;
             int i = 1;
-            while (node!=null)
+            while (node != null)
             {
-                responce += "#" + i + ": " + node.Value.FileName + " " + node.Value.AmountFound + "\n";
-                
+                Console.WriteLine("#" + i + ": " + node.Value.FileName + " " + node.Value.AmountFound);
+                i++;
+
                 node = node.Next;
             }
+            for (int j = 0; j < 2; j++)
+            {
+                Console.WriteLine();
+            }
 
-            return responce;
         }
 
         public static void clearRanking()
