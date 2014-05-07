@@ -1,3 +1,0 @@
-hello there this is a test to check if there is a word in this file that contains "42"
-so now there will be one hit in the 42.
-I mean two now

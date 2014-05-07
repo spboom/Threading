@@ -42,28 +42,37 @@ namespace TheMeaningOfLife
             }
             else
             {
-                if (!amountPerFile.ContainsKey(fullPath))
+                //if (!amountPerFile.ContainsKey(fullPath))
+                //{
+                //    amountPerFile.Add(fullPath, 0);
+                //}
+                //string[] lines = System.IO.File.ReadAllLines(fullPath);
+
+                //foreach (String line in lines)
+                //{
+                //    string[] words = line.Split(' ');
+                //    foreach (String word in words)
+                //    {
+                //        if (word.Contains("42"))
+                //        {
+                //            int amount = 0;
+                //            amountPerFile.TryGetValue(fullPath, out amount);
+
+                //            amountPerFile[fullPath] = amount + 1;
+                //        }
+
+                //    }
+                //}
+
+                int count = 0;
+                byte[] bytes = File.ReadAllBytes(fullPath);
+                foreach (byte b in bytes)
                 {
-                    amountPerFile.Add(fullPath, 0);
+                    Console.Write(b + " ");
+                    if (b == 42)
+                        count++;
                 }
-                string[] lines = System.IO.File.ReadAllLines(fullPath);
-
-                foreach (String line in lines)
-                {
-                    string[] words = line.Split(' ');
-                    foreach (String word in words)
-                    {
-                        if (word.Contains("42"))
-                        {
-                            int amount = 0;
-                            amountPerFile.TryGetValue(fullPath, out amount);
-
-                            amountPerFile[fullPath] = amount + 1;
-                        }
-
-                    }
-                }
-
+                Console.WriteLine("\nAmount of bytes with value 42: " + count);
             }
         }
 
