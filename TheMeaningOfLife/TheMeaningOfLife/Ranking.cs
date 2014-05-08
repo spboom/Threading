@@ -52,20 +52,23 @@ namespace TheMeaningOfLife
 
         public static void showRanking()
         {
-            LinkedListNode<SearchedFile> node = ranking.First;
-            int i = 1;
-            while (node != null)
+            lock (RankingProp)
             {
-                Console.WriteLine("#" + i + ": " + node.Value.FileName + " " + node.Value.AmountFound);
-                i++;
+                LinkedListNode<SearchedFile> node = ranking.First;
+                int i = 1;
+                while (node != null)
+                {
+                    Console.WriteLine("#" + i + ": " + node.Value.FileName + " " + node.Value.AmountFound);
+                    i++;
 
-                node = node.Next;
-            }
-            for (int j = 0; j < 2; j++)
-            {
-                Console.WriteLine();
-            }
+                    node = node.Next;
+                }
+                for (int j = 0; j < 2; j++)
+                {
+                    Console.WriteLine();
+                }
 
+            }
         }
 
         public static void clearRanking()

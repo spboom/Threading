@@ -19,6 +19,8 @@ namespace TheMeaningOfLife
             
             Mutex.WaitAll(threadFinishEvents.ToArray());
 
+            Ranking.showRanking();
+
             Console.Read();
         }
 
