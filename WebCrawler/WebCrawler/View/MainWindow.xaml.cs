@@ -29,8 +29,10 @@ namespace WebCrawler.View
         private void downloadUrl(String url)
         {
             WebClient wc = new WebClient();
-            String s = wc.DownloadString(url);
-            label1.Content = s;
+            String html = wc.DownloadString(url);
+            label1.Content = html;
+
+            System.IO.File.WriteAllText("..\\..\\..\\..\\TestFiles\\WebCrawler.html", html);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
