@@ -11,6 +11,7 @@
             <TextBox Name="fetchURL" Width="100" Margin="5,0"/>
             <Button Content="Fetch" Margin="5,0"/>
         </StackPanel>
+        <Label Name="label1" Grid.Row="1"/>
         
         
         
