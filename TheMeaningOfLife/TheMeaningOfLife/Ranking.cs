@@ -12,26 +12,28 @@ namespace TheMeaningOfLife
 
         private static LinkedList<SearchedFile> RankingProp
         {
-            get { lock (RankingProp) { return Ranking.ranking; } }
-            set { lock (RankingProp) { Ranking.ranking = value; } }
+            get { return Ranking.ranking; }
+            set { Ranking.ranking = value; }
         }
         private static int MAXSIZE = 10;
         public Ranking()
-            :base()
+            : base()
         {
         }
 
         public static void add(SearchedFile file)
         {
-            LinkedListNode<SearchedFile> node = ranking.First;
-            if (ranking.Count == 0)
+            lock (RankingProp)
             {
-                    ranking.AddFirst(file);
-            }
-            else
-            {
-                while (node != null)
+                LinkedListNode<SearchedFile> node = ranking.First;
+                if (ranking.Count == 0)
                 {
+                    ranking.AddFirst(file);
+                }
+                else
+                {
+                    while (node != null)
+                    {
                         if (node.Value.AmountFound < file.AmountFound)
                         {
                             ranking.AddBefore(node, file);
@@ -42,9 +44,10 @@ namespace TheMeaningOfLife
                             }
                             break;
                         }
+                    }
                 }
+                showRanking();
             }
-            showRanking();
         }
 
         public static void showRanking()
@@ -67,16 +70,22 @@ namespace TheMeaningOfLife
 
         public static void clearRanking()
         {
-            ranking = new LinkedList<SearchedFile>();
+            lock (RankingProp)
+            {
+                ranking = new LinkedList<SearchedFile>();
+            }
         }
 
         public static bool canAdd(SearchedFile file)
         {
-            if (ranking.Count < MAXSIZE)
+            lock (RankingProp)
             {
-                return true;
+                if (ranking.Count < MAXSIZE)
+                {
+                    return true;
+                }
+                return ranking.Last.Value.AmountFound < file.AmountFound;
             }
-            return ranking.Last.Value.AmountFound < file.AmountFound;
         }
     }
 }
