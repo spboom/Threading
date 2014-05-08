@@ -49,16 +49,17 @@ namespace WebCrawler.ViewModel
 
         public MainViewModel()
         {
-            downloadUrl();
             fetch = new DelegateCommand<object>((s) => { downloadUrl(); }, (s) => { return !string.IsNullOrWhiteSpace(FetchUrl); });
         }
 
         private void downloadUrl()
         {
             WebClient wc = new WebClient();
+            String html = wc.DownloadString(FetchUrl);
 
-            String s = wc.DownloadString("http://www.nu.nl");
-            SiteContent = s;
+            System.IO.File.WriteAllText("..\\..\\..\\..\\TestFiles\\WebCrawler.html", html);
+
+            SiteContent = html;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
