@@ -9,7 +9,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" >
             <TextBox Name="fetchURL" Width="100" Margin="5,0"/>
-            <Button Content="Fetch" Margin="5,0"/>
+            <Button Content="Fetch" Margin="5,0" Height="21" VerticalAlignment="Bottom" Click="Button_Click"/>
         </StackPanel>
         <Label Name="label1" Grid.Row="1"/>
         

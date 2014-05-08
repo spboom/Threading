@@ -24,18 +24,18 @@ namespace WebCrawler.View
         public MainWindow()
         {
             InitializeComponent();
-
-            downloadUrl();
-
         }
 
-        private void downloadUrl()
+        private void downloadUrl(String url)
         {
             WebClient wc = new WebClient();
-
-            String s = wc.DownloadString("http://www.nu.nl");
-            Console.WriteLine(s);
+            String s = wc.DownloadString(url);
             label1.Content = s;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            downloadUrl(fetchURL.Text);
         }
     }
 }
