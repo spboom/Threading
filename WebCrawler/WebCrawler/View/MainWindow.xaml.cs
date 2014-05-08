@@ -24,18 +24,6 @@ namespace WebCrawler.View
         public MainWindow()
         {
             InitializeComponent();
-
-            downloadUrl();
-
-        }
-
-        private void downloadUrl()
-        {
-            WebClient wc = new WebClient();
-
-            String s = wc.DownloadString("http://www.nu.nl");
-            Console.WriteLine(s);
-            label1.Content = s;
         }
     }
 }
