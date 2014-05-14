@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Model\Downloader.cs" />
+    <Compile Include="Model\DownloadThread.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
