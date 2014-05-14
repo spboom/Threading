@@ -19,13 +19,14 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center" >
-                <TextBox Name="fetchURL" Width="100" Margin="5,0" Text="{Binding FetchUrl, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBox Name="RootURL" Width="274" Margin="5,0" Text="{Binding RootURL, UpdateSourceTrigger=PropertyChanged}"/>
                 <Button Content="Fetch" Margin="5,0" Command="{Binding Fetch}"/>
             </StackPanel>
             <Label Name="label1" Grid.Row="1" Content="{Binding SiteContent}"/>
-            <ListBox Name="listBox" ItemsSource="{Binding Path=Threads}" ItemTemplate="{StaticResource StatusBarTemplate}" Width="Auto"/>
+            <ListBox Name="listBox" Grid.Row="2" ItemsSource="{Binding Path=Threads}" ItemTemplate="{StaticResource StatusBarTemplate}" Width="Auto"/>
 
         </Grid>
     </ScrollViewer>
