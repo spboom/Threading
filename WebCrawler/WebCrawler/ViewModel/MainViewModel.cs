@@ -4,7 +4,10 @@ using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
+using WebCrawler.Model;
 
 namespace WebCrawler.ViewModel
 {
@@ -13,6 +16,8 @@ namespace WebCrawler.ViewModel
         private string siteContent;
 
         private string fetchUrl;
+
+        private List<String> urls;
 
         public string FetchUrl
         {
@@ -49,18 +54,10 @@ namespace WebCrawler.ViewModel
 
         public MainViewModel()
         {
-            fetch = new DelegateCommand<object>((s) => { downloadUrl(); }, (s) => { return !string.IsNullOrWhiteSpace(FetchUrl); });
+            fetch = new DelegateCommand<object>((s) => { Downloader.downloadUrl(FetchUrl); }, (s) => { return !string.IsNullOrWhiteSpace(FetchUrl); });
         }
 
-        private void downloadUrl()
-        {
-            WebClient wc = new WebClient();
-            String html = wc.DownloadString(FetchUrl);
-
-            System.IO.File.WriteAllText("..\\..\\..\\..\\TestFiles\\WebCrawler.html", html);
-
-            SiteContent = html;
-        }
+       
 
         public event PropertyChangedEventHandler PropertyChanged;
 
