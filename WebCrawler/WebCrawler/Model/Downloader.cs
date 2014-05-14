@@ -25,8 +25,9 @@ namespace WebCrawler.Model
             {
                 links.Add(match.Value);
                 count++;
-                
-                string baseDomain = fetchUrl.Substring(7);
+
+                // Removes http://wwww
+                string baseDomain = fetchUrl.Substring(10);
 
                 Match match2 = Regex.Match(match.Value, baseDomain, RegexOptions.IgnoreCase);
                 if (match2.Success)
