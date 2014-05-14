@@ -10,7 +10,6 @@ namespace WebCrawler.Model
 {
     class Downloader
     {
-
         public static void downloadUrl(String fetchUrl)
         {
             WebClient wc = new WebClient();
@@ -26,15 +25,16 @@ namespace WebCrawler.Model
             {
                 links.Add(match.Value);
                 count++;
-                string sub = fetchUrl.Substring(7, 3);
-                Console.WriteLine("Downloading " + match.Value);
+                
+                string baseDomain = fetchUrl.Substring(7);
 
-                //System.IO.File.WriteAllText("..\\..\\..\\..\\TestFiles\\Download\\" + sub + "\\" + count + ".html", wc.DownloadString(match.Value));
-                System.IO.File.WriteAllText("..\\..\\..\\..\\TestFiles\\Download\\" + count + ".html", wc.DownloadString(match.Value));
+                Match match2 = Regex.Match(match.Value, baseDomain, RegexOptions.IgnoreCase);
+                if (match2.Success)
+                {
+                    Console.WriteLine("Downloading (" + count + ")" + match.Value);
+                    System.IO.File.WriteAllText("..\\..\\..\\..\\TestFiles\\Download\\" + count + ".html", wc.DownloadString(match.Value));
+                } 
             }
-
         }
-
-
     }
 }
