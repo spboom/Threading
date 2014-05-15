@@ -21,6 +21,8 @@ namespace WebCrawler.Model
                 // Removes http://wwww
                 string baseDomain = fetchUrl.Substring(10);
 
+                // Make folder named after baseDomain
+
                 Match match2 = Regex.Match(match.Value, baseDomain, RegexOptions.IgnoreCase);
                 if (match2.Success)
                 {
@@ -28,6 +30,9 @@ namespace WebCrawler.Model
                 }
             }
             callback.Progress = 90;
+            // Make folder named after subdomain (www/images/developers/)
+            // Make folders for all folders after baseURL (apple.com/images, apple.com/a/folder/to/somewhere)
+            Console.WriteLine("Downloading (" + count + ")" + fetchUrl);
             System.IO.File.WriteAllText("..\\..\\..\\..\\TestFiles\\Download\\" + count++ + ".html", wc.DownloadString(fetchUrl));
             callback.Progress = 100;
         }

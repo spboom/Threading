@@ -20,8 +20,7 @@
             <Label Name="label1" Grid.Row="1" Content="{Binding SiteContent}"/>
             <DataGrid ItemsSource="{Binding Path=Threads}" Grid.Row="2" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" MaxWidth="{Binding NameWidth, Mode=TwoWay}"/>
-                    <DataGridTemplateColumn x:Name="Progress" Header="Progress" MaxWidth="{Binding ProgressWidth, Mode=TwoWay}">
+                    <DataGridTemplateColumn x:Name="Progress" Header="Progress" MaxWidth="{Binding ProgressWidth, Mode=TwoWay}" CanUserSort="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Grid>
@@ -31,6 +30,7 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}" MaxWidth="{Binding NameWidth, Mode=TwoWay}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

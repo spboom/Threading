@@ -65,7 +65,6 @@ namespace WebCrawler.ViewModel
                 Height = 350;
                 Threads = new BindingList<DownloadThread>();
                 fetch = new DelegateCommand<object>((s) => { new DownloadThread(RootURL); }, (s) => { return !string.IsNullOrWhiteSpace(RootURL); });
-                Threads.Add(new DownloadThread() { Name = "Test 0", Progress = 0 });
 
                 RootURL = "http://www.youtube.com";
                 MainViewModel.Instance = this;
