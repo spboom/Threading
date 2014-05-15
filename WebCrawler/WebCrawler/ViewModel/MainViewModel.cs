@@ -64,9 +64,13 @@ namespace WebCrawler.ViewModel
                 Width = 525;
                 Height = 350;
                 Threads = new BindingList<DownloadThread>();
-                fetch = new DelegateCommand<object>((s) => { new DownloadThread(RootURL); }, (s) => { return !string.IsNullOrWhiteSpace(RootURL); });
+                fetch = new DelegateCommand<object>((s) =>
+                {
+                    Threads.Clear();
+                    new DownloadThread(RootURL);
+                }, (s) => { return !string.IsNullOrWhiteSpace(RootURL); });
 
-                RootURL = "http://www.youtube.com";
+                RootURL = "http://www.apple.com";
                 MainViewModel.Instance = this;
             }
             else throw new Exception("There can only be one!!!!!");
