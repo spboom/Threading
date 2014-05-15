@@ -17,6 +17,14 @@ namespace WebCrawler.ViewModel
 
         private List<String> urls;
 
+        private static MainViewModel instance;
+
+        public static MainViewModel Instance
+        {
+            get { return MainViewModel.instance; }
+            private set { MainViewModel.instance = value; }
+        }
+
         public string RootURL
         {
             get
@@ -51,19 +59,18 @@ namespace WebCrawler.ViewModel
 
         public MainViewModel()
         {
-            fetch = new DelegateCommand<object>((s) => { Downloader.downloadUrl(RootURL); }, (s) => { return !string.IsNullOrWhiteSpace(RootURL); });
-            Threads = new BindingList<DownloadThread>();
-            Threads.Add(new DownloadThread() { Name = "Test 0", Progress = 0 });
-            Threads.Add(new DownloadThread() { Name = "Test 10", Progress = 10 });
-            Threads.Add(new DownloadThread() { Name = "Test 20", Progress = 20 });
-            Threads.Add(new DownloadThread() { Name = "Test 30", Progress = 30 });
-            Threads.Add(new DownloadThread() { Name = "Test 40", Progress = 40 });
-            Threads.Add(new DownloadThread() { Name = "Test 50", Progress = 50 });
-            Threads.Add(new DownloadThread() { Name = "Test 60", Progress = 60 });
-            Threads.Add(new DownloadThread() { Name = "Test 70", Progress = 70 });
-            Threads.Add(new DownloadThread() { Name = "Test 80", Progress = 80 });
-            Threads.Add(new DownloadThread() { Name = "Test 90", Progress = 90 });
-            Threads.Add(new DownloadThread() { Name = "Test 100", Progress = 100 });
+            if (MainViewModel.instance == null)
+            {
+                Width = 525;
+                Height = 350;
+                Threads = new BindingList<DownloadThread>();
+                fetch = new DelegateCommand<object>((s) => { new DownloadThread(RootURL); }, (s) => { return !string.IsNullOrWhiteSpace(RootURL); });
+                Threads.Add(new DownloadThread() { Name = "Test 0", Progress = 0 });
+
+                RootURL = "http://www.youtube.com";
+                MainViewModel.Instance = this;
+            }
+            else throw new Exception("There can only be one!!!!!");
         }
 
 
@@ -79,5 +86,20 @@ namespace WebCrawler.ViewModel
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        public void redraw()
+        {
+
+        }
+
+        private int height;
+        public int Height { get { return height; } set { height = value; RaisePropertyChanged("Height"); } }
+
+        private int width;
+        public int Width { get { return width; } set { width = value; RaisePropertyChanged("Width"); RaisePropertyChanged("NameWidth"); } }
+
+        public int ProgressWidth { get { return 200; } }
+
+        public int NameWidth { get { return Width - ProgressWidth; } }
     }
 }
