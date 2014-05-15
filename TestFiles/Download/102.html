@@ -1,0 +1,424 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+$Id: lp4021.html 102791 2013-02-28 10:12:00Z PM added link bug 79133 $
+(c)2013 The New York Times Company  
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>The New York Times</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="DCS.dcssip" content="www.nytimes.com"/>
+<meta name="DCS.dcuri" content="/subscriptions/Multiproduct/lp4021.html"/>
+<meta name="WT.ti" content="Gift Landing Page"/>
+<meta name="WT.cg_n" content="Digital Subscription" />
+<meta name="WT.cg_s" content="NYT"/>
+<meta name="WT.z_gpt" content="E-Commerce" />
+<meta name="WT.z_gpst" content="Purchase" />
+<meta name="WT.z_gpsst" content="Gift Sub Purchase" />
+<meta name="WT.si_n" content="Digital Subscription" />
+<meta name="WT.si_x" content="2" />
+<link rel="stylesheet" type="text/css" href="http://graphics8.nytimes.com/css/0.1/screen/build/sitehelp/styles.css" />
+<link rel="stylesheet" type="text/css" href="css/global_gsub_two.css" />
+<link rel="stylesheet" type="text/css" media="print" href="http://graphics8.nytimes.com/css/0.1/print/styles.css" />
+<!--[if IE]>
+	<style type="text/css">
+		@import url(http://graphics8.nytimes.com/css/0.1/screen/common/ie.css);
+	</style>
+	<![endif]-->
+<!--[if IE 6]>
+	<style type="text/css">
+		@import url(http://graphics8.nytimes.com/css/0.1/screen/common/ie6.css);
+	</style>
+	<![endif]-->
+<!--[if lt IE 7 ]><body class="ie6"><![endif]-->
+<script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script
+src="http://www.nytimes.com/js/test/regi/landingPage/kampyle/k_button.js"></script>
+<script
+src="http://www.nytimes.com/subscriptions/test/kampyle/js/nytd_kampyle.js"></script>
+<script src="js/deskbutton.js" ></script>
+<script src="js/login_test.js" ></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+//Set sectional default open/close settings
+$('.sect_cont').hide(); //Hide/close all containers
+//$('.sect_switch:last').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container
+	
+//Set FAQ default open/close settings
+$('.faq_cont').hide(); //Hide/close all containers
+//$('.faq_switch:first').addClass('active').next().show(); //Add "active" class to first trigger, then show/open the immediate next container
+
+//On Click -- sections
+$('.sect_switch').click(function(){
+	$(this).toggleClass("active").next().slideToggle();
+	return false; //Prevent the browser jump to the link anchor
+});
+
+//On Click -- FAQ
+$('.faq_switch').click(function(){
+	$(this).toggleClass("active").next().slideToggle();
+	return false; //Prevent the browser jump to the link anchor
+});
+//init price values/reset
+$('#weeksA').prop('checked', true);
+$('#weeksB').prop('checked', false);
+$('.prodPriceA').show();
+$('.prodPriceB').hide();
+
+
+//show/hide PrivesA/PricesB
+   $('#weeksA').click( function() {
+   	$('.prodPriceA').show();
+    $('.prodPriceB').hide();
+   });
+   $('#weeksB').click( function() {
+    $('.prodPriceB').show();
+    $('.prodPriceA').hide();
+   });
+});
+
+//formFunctionality
+function goToURL() {
+	if ($('#weeksA').is(':checked')) {
+		var elements = $("input[name=bundleA]");
+	}else {
+		var elements = $("input[name=bundleB]");
+	}
+	
+	for (var i = 0, element; element = elements[i]; i++) {
+		if (element.checked) {
+			window.location.href = element.value;
+		}
+	};
+	return false;
+}
+</script>
+<style>
+    #memberTools li {
+        border-left: none;
+        border-right: 1px solid rgb(204,204,204);
+        padding: 0 6px 0 2px;
+    }
+
+    #memberTools li.last, #memberTools li:last-child {
+        border-right-width: 0px;
+    }
+</style>
+</head>
+<body>
+	<!--
+Start of DoubleClick Floodlight Tag: Please do not remove Activity name of this tag: NYT Pay 
+Wall Campaign Digital Subscriber Landing Page URL of the webpage where the tag is expected to 
+be placed: https://www.nytimes.com
+This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+Creation Date: 03/22/2011
+-->
+<script type="text/javascript">
+  if(document.location.hostname === "www.nytimes.com") {
+    var axel = Math.random() + "";
+    var a = axel * 10000000000000;
+    document.write('<iframe src="https://fls.doubleclick.net/activityi;src=588818;type=nytpa595;cat=nytpa582;ord='+ a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+    document.write('<noscript><iframe src="https://fls.doubleclick.net/activityi;src=588818;type=nytpa595;cat=nytpa582;ord=1?" width="1" height="1" frameborder="0" style="display:none"></iframe></noscript>');
+  } 
+</script>
+<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
+
+<p>
+<a name="top" id="top"></a>
+</p>
+<div id="shell" style="width: 768px;">
+<ul id="memberTools" class="d">
+            <li id="link_login" style="display:none">Digital subscriber? <a id="login_dig" href="https://www.nytimes.com/auth/login?URI=http://">Log In</a></li>
+            <li>Home delivery subscriber? <a id="free_access_hd" href="https://myaccount.nytimes.com/link/homedelivery">Get free access</a></li>
+            
+            <!-- kampyle link -->
+            <li><a href="#" target="kampyleWindow" id="kampylink" >Feedback</a></li>
+        </ul>
+<br/>
+<div id="page" style="width: 768px">
+<div id="bowTop"></div>
+<div class="clearfix" id="masthead">
+<div id="branding"> <a href="http://www.nytimes.com"><img src="img/nyt_logo.gif" alt="New York Times" id="NYTLogo" /></a> </div>
+<div id="date"></div>
+</div>
+<div id="container" class="clearfix">
+<div id="head">
+	<img src="img/headlinegift.gif" width="610" height="71" alt="Give The Gift of a Times Digital Subscription and Save." />
+	
+
+</div>
+<div id="sectionMain">
+
+<form name="radioForm" action="#" method="POST" onsubmit="return goToURL();" id="mainProdBoxForm">
+	<div id="preMainBox">
+		<div class="rowProds">
+			<h2><strong>STEP 1:</strong> Choose a 12- or 26-week gift subscription.</h2>
+			<div class="priceHeader">(For new subscribers only)</div>
+			<div class="prodPrice">
+				<input name="weeks" type="radio" class="radiobutton" id="weeksA" value="#" checked="checked"/>
+				<div class="priceDeets"><h4>12 weeks</h4></div> 
+			</div>
+			<div class="prodPrice bot">
+				<input name="weeks" type="radio" class="radiobutton" id="weeksB" value="#" />
+				<div class="priceDeets"> <h4>26 weeks</h4></div> 
+			</div>
+		</div>
+	</div>
+	<div id="mainProdBox">
+		<div class="rowProds prodTop">
+			<h2><strong>STEP 2:</strong> Choose the digital subscription you want to purchase as a gift:</h2>
+			<div class="priceHeader">(One-time payment)</div>
+		</div>
+		<div class="rowProds"> 
+			<img src="img/prod_1.jpg" alt="NYTimes.com + Smartphone apps Unlimited access to NYTimes.com and the NYTimes smartphone apps." width="128" height="59" />
+			<div class="prodDesc">
+				<h3>NYTimes.com + Smartphone Apps</h3>Unlimited access to NYTimes.com and the NYTimes smartphone apps, plus the new NYT Now app.
+			</div>
+			<div class="prodPriceA">
+				<input name="bundleA" type="radio" class="radiobutton" id="radio_smart1A" value="https://myaccount.nytimes.com/gst/purchase_gc.html?OC=1001513" checked="checked" />
+				<div class="priceDeets"> <h4>$30</h4> regularly $45</div>
+			</div>
+			<div class="prodPriceB">
+				<input name="bundleB" type="radio" class="radiobutton" id="radio_smart1B" value="https://myaccount.nytimes.com/gst/purchase_gc.html?OC=1001543" checked="checked" />
+				<div class="priceDeets"> <h4>$65</h4> regularly $97.50</div>
+			</div>
+		</div>
+		<div class="rowProds">
+			<img src="img/prod_2.jpg" alt="NYTimes.com + Tablet App Unlimited access to NYTimes.com and the NYTimes tablet app." width="128" height="60" />
+			<div class="prodDesc">
+				<h3>NYTimes.com + Tablet Apps</h3>Unlimited access to NYTimes.com and the NYTimes tablet apps, plus the new NYT Now app.
+			</div>
+			<div class="prodPriceA">
+				<input name="bundleA" class="radiobutton" type="radio" id="radio_smart2A" value="https://myaccount.nytimes.com/gst/purchase_gc.html?OC=1001523" />
+				<div class="priceDeets"> <h4>$40</h4> regularly $60</div>
+			</div>
+			<div class="prodPriceB">
+				<input name="bundleB" class="radiobutton" type="radio" id="radio_smart2B" value="https://myaccount.nytimes.com/gst/purchase_gc.html?OC=1001553" />
+				<div class="priceDeets"> <h4>$85</h4> regularly $130.00</div>
+			</div>
+		</div>
+		<div class="rowProds">
+			<img src="img/prod_3.jpg" alt="All Digital Access Unlimited access to NYTimes.com and the NYTimes tablet and  smartphone apps." width="128" height="66" />
+			<div class="prodDesc">
+				<h3>All Digital Access</h3>Unlimited access to NYTimes.com and the NYTimes tablet and smartphone apps, plus the new NYT Now app.
+			</div>
+			<div class="prodPriceA">
+				<input name="bundleA" class="radiobutton" type="radio" id="radio_smart3A" value="https://myaccount.nytimes.com/gst/purchase_gc.html?OC=1001533" />
+				<div class="priceDeets"> <h4>$70</h4> regularly $105</div>
+			</div>
+			<div class="prodPriceB">
+				<input name="bundleB" class="radiobutton" type="radio" id="radio_smart3B" value="https://myaccount.nytimes.com/gst/purchase_gc.html?OC=1001563" />
+				<div class="priceDeets"> <h4>$150</h4> regularly $227.50</div>
+			</div>
+		</div>
+		<div class="rowProds prodBot">
+			<input id="continue" value="Continue &#9658;" type="submit" />
+		</div>
+	</div>
+</form>
+
+
+
+<p class="tiny bold">*Gift subscriptions can only be purchased for users who are not currently subscribed. Please allow 24 hours for gift subscription order processing. Promotional offers for new subscribers only. </p>
+<p class="tiny">Smartphone and tablet apps are not supported on all devices. NYTimes.com + Smartphone Apps, NYTimes.com + Tablet Apps and All Digital Access subscriptions do not include e-reader editions, Times Premier content, Premium Crosswords or The New York Times Crosswords apps. Prices shown are in U.S. dollars. Gift subscription period begins the day of redemption. Redemption codes expire five years after date of purchase. <a href="http://www.nytimes.com/content/help/rights/sale/terms-of-sale.html#nonsub" target="_blank">Other restrictions apply</a>.</p>
+</div>
+<div id="sectionCompare"  class="clearfix">
+<h1 class="sect_switch"><a href="#">Compare Our Digital Subscriptions</a></h1>
+<div class="sect_cont">
+<div class="block">
+<table id="compare_table" cellpadding="0" cellspacing="0">
+	<tbody>
+		<tr class="top">
+			<td width="261">&nbsp;</td>
+			<td width="145" class="centered">NYTimes.com<br /> + Smartphone Apps</td>
+			<td width="124" class="centered">NYTimes.com<br /> + Tablet Apps</td>
+			<td width="104" class="centered">All Digital<br /> Access</td>
+		</tr>
+		<tr>
+			<td class="side">Unlimited access to NYTimes.com from any device.</td>
+			<td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+			<td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+			<td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		</tr>
+		<tr>
+			<td class="side">Unlimited access to the NYTimes app for iPhone<span class="sup">&reg;</span>, BlackBerry<span class="sup">&reg;</span> 10, Windows<span class="sup">&reg;</span> Phone 7+ and Android&#153;-powered phones.</td>
+			<td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+			<td>&nbsp;</td>
+			<td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		</tr>
+		<tr>
+			<td class="side">Unlimited access to the NYTimes app for iPad<span class="sup">&reg;</span>, Kindle Fire, Windows 8<span class="sup">&reg;</span> desktop and tablet, Android&#153;-powered tablets, The Collection app for iPad, NYTimes App for Chrome Web Store.</td>
+			<td>&nbsp;</td>
+			<td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+			<td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		</tr>
+		<tr>
+		  <td class="side">Unlimited access to Today&rsquo;s Paper web app from desktop and tablet.</td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  </tr>
+		<tr>
+		  <td class="side">The NYT Now app for iPhone<span class="sup">&reg;</span> and a selection of top stories on NYTimes.com, handpicked by editors.</td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  </tr>
+		<tr>
+		  <td class="side">Times Machine Archive: Browse full issues from our past, see all articles, photos, ads as they originally appeared in print. Subscribers can view up to 100 articles per month.</td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  </tr>
+		<tr>
+		  <td class="side">What We&#146;re Reading &#150; A new weekly guide to recommended reading on the web, created just for subscribers</td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  <td class="centered"><img src="img/check.png" width="26" height="26" alt="Yes" /></td>
+		  </tr>
+
+	</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="sectionFAQ"  class="clearfix">
+<h1 class="sect_switch"><a href="#">Frequently Asked Questions</a></h1>
+<div class="sect_cont">
+<div class="block">
+<p class="faq_switch"><a href="#">What are gift subscriptions?</a></p>
+<div class="faq_cont">
+<div class="block">
+<p>Gift subscriptions are a way for you to give the gift of NYTimes digital access. These are for 12 or 26 weeks, and your one-time payment covers the full subscription period. If gift recipients choose to extend access beyond the gift subscription period, they will enter their own billing information and pay for continued service.</p>
+<p>Choose one of these three packages for your gift subscription:</p>
+<ul><strong>NYTimes.com + Smartphone Apps*:</strong>
+	<li>Unlimited access to NYTimes.com from any computer or device</li>
+	<li>Unlimited access to NYTimes app for iPhone<span class="sup">&reg;</span>, BlackBerry<span class="sup">&reg;</span> 10, Windows<span class="sup">&reg;</span> Phone 7+ and Android&#153;-powered phones</li>
+    
+                  <li class="common">Unlimited access to Todayâ€™s Paper web app from desktop and tablet.</li>
+                 	
+                    <li class="common">NYT Now app &#150; A selection of top stories, handpicked by editors. IPhone<span class="sup">&reg;</span> only; $8 per month value; included with subscription.</li>
+
+                        <li class="common">TimesMachine Archive &#150; Browse full issues from our past, see all articles, photos and ads as they originally appeared in print. Subscribers can view up to 100 articles per month.</li> 
+                         <li class="common">What We&#146;re Reading &#150; A new weekly guide to recommended reading on the web, created just for subscribers.</li>
+    
+    </ul>
+    
+    
+<ul><strong>NYTimes.com + Tablet Apps*:</strong>
+	<li>Unlimited access to NYTimes.com from any computer or device</li>
+	<li>Unlimited access to NYTimes app for iPad<span class="sup">&reg;</span>, Kindle Fire, Windows 8<span class="sup">&reg;</span> desktop and tablet, Android&#153;-powered tablets, The Collection app for iPad, NYTimes App for Chrome Web Store</li>
+    
+                  <li class="common">Unlimited access to Todayâ€™s Paper web app from desktop and tablet.</li>
+                 	
+                    <li class="common">NYT Now app &#150; A selection of top stories, handpicked by editors.IPhone<span class="sup">&reg;</span> only; $8 per month value; included with subscription.</li>
+
+                        <li class="common">TimesMachine Archive &#150; Browse full issues from our past, see all articles, photos and ads as they originally appeared in print. Subscribers can view up to 100 articles per month.</li> 
+                         <li class="common">What We&#146;re Reading &#150; A new weekly guide to recommended reading on the web, created just for subscribers.</li>
+    
+    </ul>
+    
+    
+<ul><strong>All Digital Access*:</strong>
+	<li>Unlimited access to NYTimes.com from any computer or device</li>
+	<li>Unlimited access to NYTimes app for iPhone<span class="sup">&reg;</span>, BlackBerry<span class="sup">&reg;</span> 10, Windows<span class="sup">&reg;</span> Phone 7+ and Android&#153;-powered phones</li>
+	<li>Unlimited access to NYTimes app for iPad<span class="sup">&reg;</span>, Kindle Fire, Windows 8<span class="sup">&reg;</span> desktop and tablet, Android&#153;-powered tablets, The Collection app for iPad, NYTimes App for Chrome Web Store</li>
+    
+                  <li class="common">Unlimited access to Todayâ€™s Paper web app from desktop and tablet.</li>
+                 	
+                    <li class="common">NYT Now app &#150; A selection of top stories, handpicked by editors. IPhone<span class="sup">&reg;</span> only; $8 per month value; included with subscription.</li>
+
+                        <li class="common">TimesMachine Archive &#150; Browse full issues from our past, see all articles, photos and ads as they originally appeared in print. Subscribers can view up to 100 articles per month.</li> 
+                         <li class="common">What We&#146;re Reading &#150; A new weekly guide to recommended reading on the web, created just for subscribers.</li>
+     <li class="ada uncommon">Share your All Digital Access with a family member.</li>
+</ul>
+<p>*Smartphone and tablet apps are not supported on all devices. NYTimes.com + Smartphone Apps, NYTimes.com + Tablet Apps and All Digital Access subscriptions do not include e-reader editions, Times Premier content, Premium Crosswords or The New York Times Crosswords apps. Other restrictions apply.</p>
+<p>Please note, gift subscriptions are for new digital subscribers only, the recipient cannot have an existing digital or home delivery subscription.</p>
+</div>
+</div>
+<p class="faq_switch"><a href="#">Can I purchase a gift subscription for someone who is already a subscriber?</a></p>
+<div class="faq_cont">
+<div class="block">
+<p>No. You can only give a gift subscription to a new digital subscriber. If the intended recipient is an existing digital or home delivery subscriber, they won&#8217;t be able to redeem the gift.</p>
+</div>
+</div>
+<p class="faq_switch"><a href="#">How is the gift subscription delivered?</a></p>
+<div class="faq_cont">
+<div class="block">
+<p>You will be required to supply a recipient e-mail address and delivery date
+during the purchase. An e-mail containing a redemption code is sent to the
+recipient e-mail address you provide on the date you specify. You will also
+have the option to include a short message that will be in the redemption
+e-mail.</p>
+<p>If you choose to have the gift delivered immediately, your gift will be sent as
+soon as processing is complete. Processing of a gift subscription purchase
+normally takes 24 hours and may take up to 72 hours.</p>
+</div>
+</div>
+<p class="faq_switch"><a href="#">Can I purchase a home delivery gift subscription?</a></p>
+<div class="faq_cont">
+<div class="block">
+<p>Yes. You can give a home delivery gift subscription by visiting <a href="https://nytimesathome.com/hd/253?MediaCode=GSIEBL&CMP=3JFUJ" target="_blank">here</a>.</p>
+</div>
+</div>
+<p class="faq_switch"><a href="#">Can I purchase multiple gift subscriptions?</a></p>
+<div class="faq_cont">
+<div class="block">
+<p>Yes. After completing a gift purchase, press the Buy Another Gift button. Please note, a single recipient cannot redeem multiple gift subscriptions
+at once.</p>
+<p>You can also purchase multiple digital gift subscriptions or cards for your company or clients. Please e-mail us at <a href="mailto:corpgiftcard@nytimes.com?subject=Learn%20more%20about%20NYT%20Corporate%20Gift%20Cards" target="_blank">corpgiftcard@nytimes.com</a> or <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp3HFYW.html?campaignId=3JF4R" target="_blank">click here</a> for more information.</p>
+</div>
+</div>
+<p class="faq_switch"><a href="#">Can I purchase gift subscriptions for my company or clients?</a></p>
+<div class="faq_cont">
+<div class="block">
+<p>Yes. Please e-mail us at <a href="mailto:corpgiftcard@nytimes.com?subject=Learn%20more%20about%20NYT%20Corporate%20Gift%20Cards" target="_blank">corpgiftcard@nytimes.com</a> or <a href="http://www.nytimes.com/subscriptions/Multiproduct/lp3HFYW.html?campaignId=3HYJL" target="_blank">click here</a> for more information on The New York Times Corporate Gift Card Program.</p>
+</div>
+</div>
+<p class="faq_switch"><a href="#">Can I schedule the delivery of my gift?</a></p>
+<div class="faq_cont">
+<div class="block">
+<p>Yes &mdash; you can set the date the gift e-mail will be sent to the recipient during
+the order process. The gift e-mail will not be sent until processing is
+complete. Processing of a gift subscription purchase normally takes 24 hours
+and may take up to 72 hours.</p>
+</div>
+</div>
+<p class="faq_switch last"><a href="#">What are the terms of sale for gift subscriptions?</a></p>
+<div class="faq_cont">
+<div class="block">
+<p>The full purchase price for gift subscriptions will be charged at the time of purchase and is nonrefundable.</p>
+<p>Gift subscriptions are discussed under one-time purchases in the NYTimes <a href="http://www.nytimes.com/content/help/rights/sale/terms-of-sale.html#nonsub" target="_blank">Terms of Sale</a>. Redemption codes are not replaceable and will expire if not redeemed within five years of the purchase date.</p>
+</div>
+</div>
+<p class="faq_link"><a href="http://www.nytimes.com/content/help/account/purchases/gifts/gift-subs.html" target="_blank">View our complete FAQ &raquo;</a></p></div>
+</div>
+</div>
+<div id="bowBot" class="clearfix"><img src="img/bow_bottom.jpg" width="162" height="92" alt="Bow" /></div>
+</div>
+<!--close container -->
+<div id="footer">
+<ul>
+	<li class="first"> <a href="http://www.nytimes.com/content/help/rights/copyright/copyright-notice.html" target="_blank">Copyright 2013</a></li>
+		<li><a href="http://www.nytco.com/" target="_blank">The New York Times Company</a> </li>
+	<li> <a href="http://www.nytimes.com/privacy" target="_blank">Privacy Policy</a> </li>
+	<li> <a href="http://www.nytimes.com/content/help/contact/directory.html" target="_blank">Contact Us</a> </li>
+	<li> <a href="http://www.nytimes.com/membercenter/sitehelp.html" target="_blank">Help</a> </li>
+</ul>
+</div>
+<!--close footer --> 
+</div>
+<!--close page --> 
+</div>
+<!--close shell --><script src="http://graphics8.nytimes.com/js/subscriptions/params.js" type="text/javascript"></script>
+<script src="http://graphics8.nytimes.com/js/app/analytics/trackingTags_v1.1.js" type="text/javascript"></script>
+<noscript>
+<div>
+<img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://wt.o.nytimes.com/dcsym57yw10000s1s8g0boozt_9t1x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=1.0.7" /></div>
+</noscript></div>
+<img height="1" width="1" border=0 src="http://up.nytimes.com/?d=27/0/&t=22&r=&u=www.nytimes.com%2Fsubscriptions%2FMultiproduct%2Flp4021.html"/>
+</body>
+</html>

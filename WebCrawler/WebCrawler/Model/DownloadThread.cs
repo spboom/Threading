@@ -31,7 +31,7 @@ namespace WebCrawler.Model
             get { return progress; }
             set
             {
-                if(value<0)
+                if (value < 0)
                 {
                     App.Current.Dispatcher.Invoke((Action)delegate
                     {
@@ -101,9 +101,17 @@ namespace WebCrawler.Model
 
         public static bool addURL(String url)
         {
-            lock(DownloadedURLs)
+            lock (DownloadedURLs)
             {
                 return DownloadedURLs.Add(url);
+            }
+        }
+
+        public static void Clear()
+        {
+            lock (DownloadedURLs)
+            {
+                DownloadedURLs.Clear();
             }
         }
     }

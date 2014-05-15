@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width = device-width, user-scalable=0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <META NAME="WT.ti" CONTENT="Log In - NYTimes.com">
+        <META NAME="WT.cg_n" CONTENT="Member Center">
+        <META NAME="SCG" CONTENT="NYT">
+        <META NAME="PT" CONTENT="Access">
+        <META NAME="PST" CONTENT="Login">
+        <META NAME="WT.si_n" CONTENT="Log In">
+        <META NAME="WT.si_x" CONTENT="1">
+        <META NAME="WT.z_plat" CONTENT="web browser">
+        <META NAME="WT.a_nm" CONTENT="web">
+        <META NAME="WT.z_app" CONTENT="">
+
+        <title>Log In</title>
+
+        <link rel="stylesheet" type="text/css" href="https://myaccount.nytimes.com/css/0.1/screen/mobile/build/membercenter/1.0/login/styles.css">
+        <script type="text/javascript" src="https://myaccount.nytimes.com/js/app/lib/prototype/1.7/prototype.js"></script>
+
+            </head>
+    <body>
+        <div id="shell">
+            <div id="page">
+                <!-- Login Template -->
+                <div id="masthead">
+                    <div id="branding">
+                        <h2>The New York Times</h2>
+                    </div><!-- close branding -->
+                    <div class="pageHeader">
+                        <h1>LOG IN WITH YOUR NYTIMES.COM ID</h1>
+                    </div>                    <div class="errorContainer hidden" id="errorContainer">
+                        <div class="inset">
+                            <p class="error" id="errorElement"></p>
+                        </div>
+                        <div class="singleRuleDivider flushTop"></div>
+                    </div>
+
+
+                </div><!-- close masthead -->
+                <div id="main">
+                    <div class="inset">
+        <p class="subText">Please log in with your NYTimes.com ID.  If you donâ€™t have an NYTimes.com ID, click on the â€œCreate Oneâ€ link below.</p>                        <div class="horizontalFormControl loginFormControl">
+                            <form class="loginForm" id="loginForm" action="?EXIT_URI=http%3A%2F%2Fmobile.nytimes.com%2FloginReturn%3Furl%3D%2Finternational%2F" method="post" autocomplete="off">
+                                <input type="hidden" name="remember_me" value="0" />
+                                <fieldset>
+                                    <div class="control containingBlock">
+                                        <div class="labelContainer">
+                                            <div class="insetV">
+                                                <label for="username" class="">Email<br /><span class="labelDescription">or Member ID</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="fieldContainer">
+                                            <input type="text" class="text " value="" name="username" id="username" autocorrect="off" autocapitalize="off" spellcheck="false">
+                                        </div>
+                                    </div><!-- close control -->
+                                    <div class="control">
+                                        <div class="labelContainer">
+                                            <div class="insetV">
+                                                <label for="password" class="">Password</label>
+                                            </div>
+                                        </div>
+                                        <div class="fieldContainer">
+                                            <input type="password" class="text " value="" name="password" id="password">
+                                        </div>
+                                    </div><!-- close control -->
+                                    <div class="control lastControl buttonControl">
+                                        <div class="insetV centeredText">
+                                <button class="loginButton" type="submit">Log In</button>                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div><!-- close subscriptionFormControl -->
+                        <div class="box noBorder moduleBackgroundColor">
+                            <div class="insetPadded">
+                                <p>Don't have an NYTimes.com ID?<br /><a href="/mobile/regi/smart/index.html?EXIT_URI=http%3A%2F%2Fmobile.nytimes.com%2FloginReturn%3Furl%3D%2Finternational%2F">Create One &raquo;</a></p>
+                            </div>
+                        </div>                        <div class="box noBorder moduleBackgroundColor">
+                            <div class="insetPadded">
+                                <p><a href="/mobile/forgot/smart/index.html?EXIT_URI=http%3A%2F%2Fmobile.nytimes.com%2FloginReturn%3Furl%3D%2Finternational%2F" title="Click here to reset your password">Forgot password?</a></p>
+                            </div>
+                        </div>                    </div><!-- close inset -->
+                </div><!-- close main -->
+                <script src="https://myaccount.nytimes.com/js/common/forms/nytdvalidation.js" type="text/javascript"></script>                <script type="text/javascript">
+                    var formObj = new NYTD.Validation.Form("loginForm", {
+                        highlightInputFields : true,
+                        highlightErrorClassName : ".inputValidationError",
+                        highlightLabels : true,
+                        labelErrorClassName: ".nytdvalid_LabelError",
+                        errors: {
+                            location: "shared",
+                            selector: ".error"
+                        },
+                        customErrors : {
+                            FieldDefault: "Please enter a valid Member ID or email address."
+                        },
+                        onFail : function () {
+                            $('errorContainer').removeClassName('hidden');
+                        },
+                        onSuccess : function () {
+                            $('errorContainer').addClassName('hidden');
+                        }
+                    });
+
+                </script>
+
+
+                <div id="footer">
+                    <ul class="horizontalMenu piped centeredText">
+                        <li class="first"><a href="http://www.nytimes.com/content/help/rights/copyright/copyright-notice.html">Copyright 2014</a></li>
+                        <li>The New York Times Company</li>
+                    </ul>
+                </div><!-- close footer -->
+            </div><!-- close page -->
+        </div><!-- close shell -->
+<script src="https://myaccount.nytimes.com/js/app/myaccount/utils/LegacyMobileAnalytics.js" type="text/javascript"></script>
+
+<!-- Start UPT call -->
+<img height="1" width="3" border=0 src="https://up.nytimes.com/?d=0/27/&t=2&s=0&ui=&r=&u=http%3A%2F%2Fmyaccount.nytimes.com%2Fmobile%2Flogin%2Fsmart%2Findex.html%3FEXIT_URI%3Dhttp%253A%252F%252Fmobile.nytimes.com%252FloginReturn%253Furl%253D%25252Finternational%25252F">
+<!-- End UPT call -->
+
+<script src="https://static.nytimes.com/js/app/lib/env.js"></script>
+<script src="https://static.nytimes.com/bi/js/tagx/tagx.js"></script>
+    </body>
+</html>

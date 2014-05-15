@@ -1,0 +1,81 @@
+#billboard { position:absolute; top:0; right:0; bottom:292px; left:0; overflow:hidden; }
+#billboard .hero { position:absolute; top:0; right:0; bottom:0; left:0; }
+
+/* billboard baseline */
+#billboard .header { position:absolute; top:50%; right:0; left:0; }
+
+#billboard .title { margin-bottom:0; }
+#billboard .title img { display:none; margin-right:auto; margin-left:auto; }
+
+#billboard .subtitle { margin-bottom:0; }
+#billboard .subtitle img { display:none; margin-right:auto; margin-left:auto; }
+
+#billboard .subheadline { margin-bottom:0; }
+#billboard .subheadline img { display:none; margin-right:auto; margin-left:auto; }
+
+#billboard .hero-image img { display:none; margin-right:auto; margin-left:auto; }
+
+
+/* Powerful
+=================================================================*/
+#billboard .powerful { right:auto; left:50%; margin-left:-720px; width:1440px; background-size:1440px 1180px; }
+
+#billboard .gallery { position:absolute; top:0; right:0; bottom:0; left:0; }
+#billboard .gallery .gallery-view { height:100%; }
+
+#billboard .powerful .cta a:hover,
+#billboard .powerful .cta a:active { margin-top:0; }
+
+/* desktop 15 & desktop 11 (default) */
+#billboard .powerful .header { margin-top:-180px; *z-index:5; }
+#billboard .powerful .title { margin-bottom:0; }
+
+#billboard .powerful .title .small,
+#billboard .powerful .cta a .medium { display:block; }
+
+/* large desktop & ipad portrait */
+@media only screen and (min-height:1250px), only screen and (min-device-width:481px) and (max-device-width:768px) and (orientation:portrait) {
+	#billboard .powerful { background-position:50% 0%; }
+	#billboard .powerful .header { margin-top:-250px; }
+	#billboard .powerful .title { margin-bottom:11px; }
+	#billboard .powerful .title .small { display:none; }
+	#billboard .powerful .title .large { display:block; }
+}
+
+/* ipad landscape */
+@media only screen and (min-device-width:481px) and (max-device-width:768px) and (orientation:landscape) {
+	#billboard { bottom:192px; }
+	.promos { bottom:-10px; }
+	#homefooter { bottom:-100px; }
+
+	#billboard .powerful { background-position:50% 52%; }
+	#billboard .powerful .header { margin-top:-150px; }
+	#billboard .powerful .title .small { display:block; }
+	#billboard .powerful .title .medium { display:none; }
+}
+
+/* iphone landscape */
+@media only screen and (min-device-width:320px) and (max-device-width:480px) and (orientation:landscape) {
+	#billboard .powerful { background-position:50% 60%; }
+	#billboard .powerful .header { margin-top:-150px; }
+	#billboard .powerful .title { margin-bottom:10px; }
+}
+
+/* iphone portrait */
+@media only screen and (min-device-width:320px) and (max-device-width:480px) and (orientation:portrait) {
+	#billboard .powerful { background-position:50% 55%; }
+	#billboard .powerful .header { margin-top:-250px; background:none !important; }
+	#billboard .powerful .title { margin-bottom:18px; }
+	#billboard .powerful .title .small { display:none; }
+	#billboard .powerful .title .large { display:block; }
+	#billboard .powerful .cta { height:37px; }
+	#billboard .powerful .cta a img { margin:-4px auto 0; }
+	#billboard .powerful .cta a:hover img,
+	#billboard .powerful .cta a:active img { margin-top:-36px; }
+}
+
+/* iphone portrait short */
+@media only screen and (max-device-height:480px) and (orientation:portrait) {
+	#billboard .powerful { background-position:50% 50%; }
+	#billboard .powerful .header { margin-top:-250px; }
+}

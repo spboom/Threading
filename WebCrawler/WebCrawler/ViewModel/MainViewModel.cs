@@ -67,6 +67,8 @@ namespace WebCrawler.ViewModel
                 fetch = new DelegateCommand<object>((s) =>
                 {
                     Threads.Clear();
+                    DownloadThread.Clear();
+                    Downloader.count = 0;
                     new DownloadThread(RootURL);
                 }, (s) => { return !string.IsNullOrWhiteSpace(RootURL); });
 
