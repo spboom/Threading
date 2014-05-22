@@ -129,8 +129,8 @@ namespace HWW3
             getpos = (getpos + 1) % CONST.BUFLEN;
             count--;
             Console.WriteLine(consumername + ": gets " + box.Id);
-            _canAdd.Release();
             _thisLock.Release();
+            _canAdd.Release();
             return box;
         }
 
@@ -142,8 +142,8 @@ namespace HWW3
             buffer[putpos] = box;
             putpos = (putpos + 1) % CONST.BUFLEN;
             count++;
-            _canGet.Release();
             _thisLock.Release();
+            _canGet.Release();
         }
     }
 
