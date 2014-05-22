@@ -1,289 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>NYTimes.com Search</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="robots" content="noarchive">
-    <meta name="CG" content="Search">
-    <meta name="SCG" content="cse">
-    <meta name="PT" content="Search">
-    <meta name="PST" content="Search Results">
-    <meta name="PSST" content="">
-    <meta name="PS" content="">
-    <meta name="ttl" content="">
-    <link rel="stylesheet" type="text/css" href="http://s1.nyt.com/search/cse/assets/0.0.75920-99/css/min.css">
+html, body { position:relative; z-index:1; min-width:1024px; height:100%; background:#fff; }
+body { min-height:865px; *height:865px; max-height:1472px; }
 
-<!--[if IE]>
-<style type="text/css">
-@import url(http://graphics8.nytimes.com/css/0.1/screen/common/ie.css);
-</style>
-<![endif]--><!--[if IE 6]>
-<style type="text/css">
-@import url(http://graphics8.nytimes.com/css/0.1/screen/common/ie6.css);
-</style>
-<![endif]--><!--[if lt IE 9]>
-<script src="http://graphics8.nytimes.com/js/html5shiv.js"></script>
-<![endif]-->
-</head>
-<body>
-    <a name="top"></a>
-    <div id="shell">
-        <div id="page" class="tabContent active">
-            <div id="masthead" class="clearfix">
-                <div id="branding">
-                    <a href="http://www.nytimes.com"><img id="NYTLogo" alt="New York Times" src="http://graphics8.nytimes.com/images/misc/nytlogo152x23.gif"></a>
-                </div>
-                <h2> <a href="/">Search</a> </h2>
+#globalheader { z-index:9998; top:18px; margin:0 auto; }
 
-                <div class="mostPopularSearches" id="mostPopularSearches">
-                    <div class="tabDropDown">
-                        <div class="tabDropDownHeader">
-                            <div class="inset">
-                                <h5 class="tabDropDownHeading"><a class="toggleControl">Most Popular Searches</a></h5>
-                            </div>
-                        </div>
-
-                        <div class="tabDropDownContent">
-                            <div class="subColumns noBackground">
-                                <div class="column firstColumn">
-                                    <div class="inset"> 
-                                        <ol class="flush"></ol>
-                                    </div>
-                                </div>
-
-                                <div class="column lastColumn">
-                                    <div class="inset">
-                                        <ol class="flush" start="6"></ol>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-            <div id="searchHeader" class="searchHeader">
-                <div class="insetPadded opposingFloatControl wrap">
-                    <div id="inlineSearchControl" class="searchInputForm inlineSearchControl element1">
-                        <form>
-                            <div class="control horizontalControl lastControl">
-                                <div class="labelContainer">
-                                    <label for="newSearchQueryTop">Your Search</label>
-                                </div>
-                                <div class="fieldContainer containingBlock" id="yourSearch">
-                                    <input type="text" value="" id="newSearchQueryTop" class="newSearchQuery autoSuggestQuery" autocomplete="off"><ol class="autoSuggestQueryResults"></ol>
-                                    <button class="button" type="submit">Go</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <ul class="breadCrumbFilterList element1"></ul>
-                    <div class="resetFilters element2">
-                        <a data-refineby="resetFilters" class="searchFilter">Clear All Filters</a>
-                    </div>
-                </div>
-            </div>
-
-            <div id="main">
-
-                <div class="spanAB wrap">
-                    <div class="search ">
-                        <div class="abColumn">
-                            <div class="aColumn">
-
-                                <div class="columnGroup first">
-
-                                    <div class="columnGroup firstColumn dateFilters">
-                                        <h2 class="sectionHeader">Date Range</h2>
-                                        <ul class="filterList flush">
-                                            <li class="firstItem">
-                                                <a data-refineby="since1851" class="searchFilter">All Since 1851</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="24hoursago" class="searchFilter">Past 24 Hours</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="7daysago" class="searchFilter">Past 7 Days</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="30daysago" class="searchFilter">Past 30 Days</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="365daysago" class="searchFilter">Past 12 Months</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="customDateRange" class="toggleControl flushToggleControl navToggleControl">Specific Dates</a>
-                                                <div class="navTabDropDown customDateFilter">
-                                                    <form>
-                                                        <div>
-                                                            <span class="dateLabel">From:</span>
-                                                            <input type="text" name="fromMonth" class="month" id="fromMonth" value="MM" maxlength="2"> / 
-                                                            <input type="text" name="fromDay" class="day" id="fromDay" value="DD" maxlength="2"> / 
-                                                            <input type="text" name="fromYear" class="year" id="fromYear" value="YYYY" maxlength="4">
-                                                        </div>
-                                                        <div>
-                                                            <span class="dateLabel">To:</span>
-                                                            <input type="text" name="toMonth" class="month" id="toMonth" value="MM" maxlength="2"> / 
-                                                            <input type="text" name="toDay" class="day" id="toDay" value="DD" maxlength="2"> / 
-                                                            <input type="text" name="toYear" class="year" id="toYear" value="YYYY" maxlength="4">
-                                                        </div>
-                                                        <div class="customFilterFooter">
-                                                            <a class="applyCustomFilter">Refine Search</a>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="columnGroup pubTypeFilters">
-                                        <h2 class="sectionHeader">Result Type</h2>
-                                        <ul class="filterList flush">
-                                            <li class="firstItem">
-                                                <a data-refineby="all" class="searchFilter">All</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="article" class="searchFilter">Articles</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="blogs" class="searchFilter">Blogs</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="multimedia" class="searchFilter">Multimedia</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="video" class="searchFilter">Video</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="recipes" class="searchFilter">Recipes</a>
-                                            </li>
-                                            <li>
-                                                <a data-refineby="help" class="searchFilter">FAQ</a>
-                                            </li>            
-                                        </ul>
-                                    </div>
-
-                                    <div class="columnGroup bylineFilters">
-                                        <h2 class="sectionHeader">Author</h2>
-                                        <ul class="filterList flush">
-                                            <li class="firstItem">
-                                                <a data-refineby="all" class="searchFilter">All Authors</a>
-                                            </li>
-                                            <li>
-                                                <a class="navToggleControl">Specific Author</a>
-                                                <div class="navTabDropDown customBylineFilter">
-                                                    <form>
-                                                        <input type="text" class="autoSuggestQuery"><ol class="autoSuggestQueryResults"></ol>
-                                                        <div class="customFilterFooter">
-                                                            <a class="applyCustomFilter">Refine Search</a>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <div class="columnGroup sectionFilters">
-                                        <h2 class="sectionHeader">Section</h2>
-                                        <ul class="filterList flush"></ul>
-                                        <div class="toggleContainer navViewToggleContainer"></div>
-                                    </div>    
-
-                                    <div class="columnGroup imageSearch">
-                                        <ul class="filterList flush">
-                                            <li class="firstItem">
-                                                <a href="http://beta620.nytimes.com/app/image-search/">Image Search <span>(BETA)</span></a>
-                                            </li>
-                                        </ul>
-                                    </div>    
-                                </div>
-                            </div>
-                            <div class="bColumn">
-                                <div class="columnGroup first">
+.center { display:block; margin-right:auto; margin-left:auto; text-align:center; }
+.full { position:absolute; z-index:2; top:0; right:0; bottom:0; left:0; color:transparent; font-size:0; line-height:0; *background:url(http://images.apple.com/global/elements/blank.gif); }
+.hide { display:none; }
 
 
-                                    <div class="sortContainer opposingFloatControl wrap">
-                                        <div class="sortResults element1" id="sortResults">
-                                            <h3 class="horizontalMenuLabel">Sort by:</h3>
-                                            <ul class="horizontalMenu piped">
-                                                <li><a data-sortby="d">Newest</a></li>
-                                                <li><a data-sortby="a">Oldest</a></li>
-                                                <li><a data-sortby="r" class="selectedSort">Relevance</a></li>
-                                            </ul>
-                                        </div>
-                                        <div id="totalResultsCount" class="totalResultsCount element2">
-                                            <p></p>
-                                        </div>
-                                    </div>
+/* cta links */
+.cta { position:relative; z-index:10; overflow:hidden; height:32px; }
+.cta a { display:inline-block; margin:0 18px 25px; height:29px; }
+.cta a img { margin-top:-4px; }
+.cta a:hover img,
+.cta a:active img { margin-top:-36px; }
+.cta a .medium { display:inline-block; }
+.cta a .large { display:none; }
 
-                                    <div class="textAds firstTextAds wrap">
-                                        <div id="SponSearch1">
-                                        </div>
-                                    </div>
+@media only screen and (min-device-width:320px) and (max-device-width:480px) and (orientation:portrait) { /* iphone portrait */
+	.cta { height:auto; }
+	.cta a { display:block; clear:both; margin-right:auto; margin-left:auto; height:20px; }
+	.cta a.watch { display:block; clear:both; margin-right:auto; margin-left:auto; height:19px; }
+	.cta a:hover,
+	.cta a:active { margin-top:-56px; }
+	.cta a .medium { display:none; }
+	.cta a .large { display:inline-block; }
+}
 
-                                    <div class="searchResults" id="searchResults">
-                                        <ol class="searchResultsList flush"></ol>
-                                    </div>
 
-                                    <div class="textAds lastTextAds wrap">
-                                        <div id="SponSearch3">
-                                        </div>
-                                    </div>
+/* promos */
+.promos { position:absolute; z-index:1; bottom:90px; overflow:hidden; width:100%; height:200px; }
+.promos ul { position:relative; z-index:1; overflow:hidden; margin:0 auto; min-width:1024px; width:100%; max-width:1440px; height:200px; text-align:center; }
+.promos ul li { position:relative; z-index:1; float:left; overflow:hidden; margin:0; width:25%; height:200px; }
+.promos ul li + li + li + li { margin-right:-.3%; *margin-right:-.5%; width:25.3%; }
 
-                                    <div class="relatedSearchesModule wrap">
-                                    </div>
+.promos ul li a { position:absolute; z-index:1; top:0; right:0; bottom:0; left:0; display:block; overflow:hidden; cursor:pointer; }
+.promos ul li + li a { border-left:2px solid #fff; }
 
-                                    <div class="googleFooter wrap">
-                                        <div>Search results powered by Google Custom Search</div>
-                                    </div>
-                                    <div class="feedBackFooter"><a class="search_feedback_link" href="mailto:search_feedback@nytimes.com?subject=NYTimes%20Search%20Feedback">Search Feedback</a></div>
+.promos ul li a img { position:absolute; z-index:1; left:50%; margin-left:-182px; }
 
-                                    <div class="searchPagination wrap" id="searchPagination">
-                                    </div>    
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cColumn">
+.promos ul li a.left img { left:0; }
+.promos ul li a.right img { right:0; left:auto; }
 
-                            <!--cur: prev:-->
-                            <div class="columnGroup first">				
-                                <div class="textAds firstTextAds columnGroup firstColumn wrap">
-                                    <div id="SponSearch2">
-                                    </div>
-                                </div>	</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <footer class="pageFooter"><div class="inset">
-                    <nav class="pageFooterNav"><ul class="pageFooterNavList wrap">
-                        <li class="firstItem"><a href="http://www.nytco.com/">&copy; 2013 The New York Times Company</a></li>
-                        <li><a href="http://spiderbites.nytimes.com/">Site Map</a></li>
-                        <li><a href="http://www.nytimes.com/privacy">Privacy</a></li>
-                        <li><a href="http://www.nytimes.com/ref/membercenter/help/privacy.html#pp">Your Ad Choices</a></li>
-                        <li><a href="http://www.nytimes.whsites.net/mediakit/">Advertise</a></li>
-                        <li><a href="http://www.nytimes.com/content/help/rights/sale/terms-of-sale.html%20">Terms of Sale</a></li>
-                        <li><a href="http://www.nytimes.com/ref/membercenter/help/agree.html">Terms of Service</a></li>
-                        <li><a href="http://www.nytco.com/careers">Work With Us</a></li>
-                        <li><a href="http://www.nytimes.com/rss">RSS</a></li>
-                        <li><a href="http://www.nytimes.com/membercenter/sitehelp.html">Help</a></li>
-                        <li><a href="http://www.nytimes.com/ref/membercenter/help/infoservdirectory.html">Contact Us</a></li>
-                        <li class="lastItem"><a href="https://myaccount.nytimes.com/membercenter/feedback.html">Site Feedback</a></li>
-                    </ul></nav>
-                </div>
-            </footer>
-        </div>
-    </div>
+.promos ul li a img.wide { display:none; }
+@media only screen and (min-width:1200px) {
+	.promos ul li a img.wide { display:block; }
+	.promos ul li a img.narrow { display:none; }
+}
 
-    <script type="text/javascript">
-    var dcsvid = "64504788";
-    var regstatus = "registered";
-    </script>
-    <script src="http://graphics8.nytimes.com/js/app/analytics/trackingTags_v1.1.js" type="text/javascript"></script><noscript><div><img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="http://wt.o.nytimes.com/dcsym57yw10000s1s8g0boozt_9t1x/njs.gif?dcsuri=/nojavascript&amp;WT.js=No&amp;WT.tv=1.0.7"></div></noscript>
 
-    <img height="1" width="3" border="0" src="http://up.nytimes.com/?d=0//&amp;t=&amp;s=0&amp;ui=64504788&amp;r=&amp;u=query.nytimes.com%2Fsearch%2Fsitesearch%2F">
-    <script type="text/javascript" language="JavaScript" src="http://s1.nyt.com/search/cse/assets/0.0.75920-99/js/min.js"></script>
+/* banner */
+.banner { width:100%; height:60px; }
+.banner img { display:block; margin:0 auto; }
 
-</body>
-</html>
+
+/* homefooter */
+#homefooter { position:absolute; z-index:1; right:0; bottom:0; left:0; margin:0; min-width:980px; width:100%; height:90px; padding:0; color:#6e6e6e; font-size:.8334em; line-height:1.2; text-align:center; zoom:1; }
+#homefooter .wrapper { margin:0 auto; width:980px; padding:1em 0 2.6em; }
+#homefooter .wrapper:after { content:'.'; display:block; visibility:hidden; clear:both; height:0; }
+
+#homefooter .left { float:left; clear:both; width:49%; padding-top:1.5em; text-align:left; }
+#homefooter .right { float:right; width:51%; padding-top:1.5em; text-align:right; }
+
+#homefooter p,
+#homefooter ul,
+#homefooter ul li { display:inline; margin:0; }
+
+#homefooter .piped li { display:inline-block; *display:inline; float:none; margin-left:.6em; padding-left:.6em; border-left:1px solid #ccc; }
+#homefooter .piped li.first { margin-left:0; padding-left:0; border-left:none; }
+#homefooter .piped a { display:inline-block; margin:0; padding:0; border:none; }
+
+#homefooter .piped .worldwide { position:relative; z-index:1; width:16px; height:12px; zoom:1; }
+#homefooter .piped .worldwide img { position:absolute; z-index:1; top:-2px; left:7px; }
